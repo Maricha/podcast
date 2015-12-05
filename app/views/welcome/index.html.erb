@@ -4,16 +4,23 @@
              <a id="logo" href="#">RedStarCompany</a>
           <nav>
            <ul>
+              <% unless podcast_signed_in? %>
+
               <li><a href="#">Exploruj</a></li>
-              <li><a href="#">Zaloguj się</a></li>
-              <li><a href="#">Stwórz Podcast</a></li>
+              <li><%= link_to "Zaloguj się", new_podcast_session_path %></li>
+              <li><%= link_to "Stwórz Podcast", new_podcast_registration_path %></li>
+              <% else %>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">Exploruj</a></li>
+              <li><%= link_to "Wyloguj się", destroy_podcast_session_path, method: :delete %></li>
+              <% end %>
             </ul>
           </nav>
           </div>
       </header>
       <div class="wrapper_skinny">
                <h1>Odkryj swój ulubiony<br/>podcast, albo stwórz swój właśny!</h1>
-                <a href="#" class="button button_highlight">Stwórz Podcast</a>
+                <%= link_to "Stwórz Podcast", new_podcast_registration_path, class: "button button_highlight" %>
                  <a href="#" class="button button_white">Exploruj</a>
       </div>
   </div>
