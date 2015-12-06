@@ -8,17 +8,17 @@
         <div id="links">
           <div class="wrapper_skinny">
             <ul>
-              <li >Episodes</li>
-              <li><a href="#">New Episode</a></li>
+              <li ><%= link_to "Epizody", root_path %></li>
+              <li><%= link_to "Nowy epizod", new_podcast_episode_path(@podcast)%></li>
               <li ><%= link_to "Ustawienia konta", edit_podcast_registration_path, class: "current"%></li>
-              <li><a href="#">View Podcast</a></li>
+              <li><%= link_to "Zobacz Podcast", podcast_path(current_podcast) %> </li>
             </ul>
           </div>
         </div>
         </div>
 
 
-<div id="links">
+<div id="form">
   <div class="wrapper_skinny">
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
