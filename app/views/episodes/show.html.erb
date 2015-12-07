@@ -28,7 +28,8 @@
 
            <div id="episode_content">
                 <div class="wrapper_skinny">
-                  <img src="img/1a.jpg" alt="1a" class="current_episode_thumbnall">
+                  <%= image_tag @episode.episode_thumbnail.url(:medium), class: "current_episode_thumbnall" %>
+
                   <h2><%= @episode.title %> </h2>
                   <p class="description"><%= @episode.description %></p>
                 </div>
@@ -45,7 +46,7 @@
               <li class="cf">
                 <div class="episode_thumbnail">
                   <a href="episode.html">
-                    <img src="img/1a.jpg" alt="1a">
+                    <%= image_tag episode.episode_thumbnail.url(:medium) %>
                   </a>
                 </div>
                 <div class="episode_overview">
