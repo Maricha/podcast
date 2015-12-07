@@ -39,7 +39,7 @@ class EpisodesController < ApplicationController
   private
 
   def episode_params
-    params.require(:episode).permit(:title, :description, :episode_thumbnail)
+    params.require(:episode).permit(:title, :description, :episode_thumbnail, :mp3)
   end
 
 
@@ -54,7 +54,7 @@ class EpisodesController < ApplicationController
   def require_permission
     @podcast = Podcast.find(params[:podcast_id])
     if current_podcast != @podcast
-      redirect_to root_path, notice: "Przepraszam, ale nie możesz zoavzyć ten strony"
+      redirect_to root_path, notice: "Przepraszam, ale nie możesz zobaczysz ten strony"
     end
   end
 
